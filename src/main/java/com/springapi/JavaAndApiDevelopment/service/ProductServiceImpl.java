@@ -51,5 +51,12 @@ public class ProductServiceImpl {
 		product.setStockQuantity(productRequest.getStockQuantity());
 		product.setDescription(productRequest.getDescription());
 	}
+
+	public List<ProductResponse> fetchAllUsers() {
+//		    return userRepository.findAll();
+			return productRepository.findAll().stream()
+					.map(this::mapToProductResponse)
+					.collect(Collectors.toList());
+		}
 	
 }
