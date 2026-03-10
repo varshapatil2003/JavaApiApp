@@ -29,5 +29,11 @@ public class ProductController {
 		return new ResponseEntity<ProductResponse>(productServiceImpl.createProduct(productRequest), 
 				                HttpStatus.CREATED);
 	}
+	@GetMapping
+	public ResponseEntity<List<ProductResponse>> getAllUsers(){
+		//return ResponseEntity.ok(userServiceImpl.fetchAllUsers());
+		return new ResponseEntity<>(productServiceImpl.fetchAllUsers(),HttpStatus.OK);
+		//return userServiceImpl.fetchAllUsers();
+	}
 
 }
