@@ -2,10 +2,14 @@ package com.springapi.JavaAndApiDevelopment.service;
 
 
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 
 import com.springapi.JavaAndApiDevelopment.dto.ProductRequest;
 import com.springapi.JavaAndApiDevelopment.dto.ProductResponse;
+import com.springapi.JavaAndApiDevelopment.dto.UserResponse;
 import com.springapi.JavaAndApiDevelopment.model.Product;
 import com.springapi.JavaAndApiDevelopment.repository.ProductRepository;
 
@@ -58,5 +62,6 @@ public class ProductServiceImpl {
 					.map(this::mapToProductResponse)
 					.collect(Collectors.toList());
 		}
+	}
 	
-}
+
